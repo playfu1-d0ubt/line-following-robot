@@ -17,3 +17,7 @@ print(line.contains(3, 0.5))
 sensor = Sensor(0.3)
 print(sensor.position(Robot(1, 2, 0, 2)))
 print(sensor.position(Robot(1, 2, 90, 2)))
+
+print(sensor.reads_line(Robot(1, 0, 0, 2), line))
+print(sensor.reads_line(Robot(1, 0.5, 0, 2), line))
+print(sensor.reads_line(Robot(1, -0.3, 90, 2), line))

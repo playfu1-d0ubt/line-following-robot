@@ -15,3 +15,8 @@ class Sensor:
         sensor_x = robot.x + self.ahead * math.cos(heading_rad)
         sensor_y = robot.y + self.ahead * math.sin(heading_rad)
         return sensor_x, sensor_y
+
+    def reads_line(self, robot, line):
+        """Say if the sensor is over the line."""
+        x, y = self.position(robot)
+        return line.contains(x, y)
