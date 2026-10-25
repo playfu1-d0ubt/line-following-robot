@@ -1,6 +1,7 @@
 """Line-following robot simulator. Runs one tick as a demo."""
 
 from line import Line
+from plot import plot_path
 from robot import Robot
 from sensor import Sensor
 from simulate import run
@@ -16,8 +17,7 @@ def main():
     path = run(robot, line, left, right, 0.1, 100)
     print(len(path))
     print(path[-1])
-    for point in path[::10]:
-        print(point)
+    plot_path(path, line, "export/path.png")
 
 
 if __name__ == "__main__":
