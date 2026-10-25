@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 def plot_path(path, line, filename):
     """Draw the path and the line, and save the picture."""
     xs = [point[0] for point in path]
-    ys = [point[0] for point in path]
+    ys = [point[1] for point in path]
 
     fig, ax = plt.subplots()
     ax.axhspan(
