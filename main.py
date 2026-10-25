@@ -1,5 +1,6 @@
 from line import Line
 from robot import Robot
+from sensor import Sensor
 
 robot = Robot(0, 0, 0, 2)
 robot.step(0.5)
@@ -12,3 +13,7 @@ line = Line()
 print(line.contains(3, 0.05))
 print(line.contains(3, -0.08))
 print(line.contains(3, 0.5))
+
+sensor = Sensor(0.3)
+print(sensor.position(Robot(1, 2, 0, 2)))
+print(sensor.position(Robot(1, 2, 90, 2)))
