@@ -14,6 +14,7 @@ def test_step_moves_along_heading():
 
 
 def test_turn_changes_heading():
+    """Turning adds the given degrees to the heading."""
     robot = Robot(0, 0, 0, 2)
     robot.turn(30)
     assert robot.heading_deg == 30
