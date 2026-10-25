@@ -6,15 +6,19 @@ import math
 class Sensor:
     """A sensor fixed ahead of the robot centre."""
 
-    def __init__(self, ahead):
-        """Set how far ahead of the robot centre the sensor sits."""
+    def __init__(self, ahead, side=0.0):
+        """Set where the sensor sits on the robot.
+
+        ahead is forward from the centre. side is left (positive) or right (negative).
+        """
         self.ahead = ahead
+        self.side = side
 
     def position(self, robot):
-        heading_rad = math.radians(robot.heading_deg)
-        sensor_x = robot.x + self.ahead * math.cos(heading_rad)
-        sensor_y = robot.y + self.ahead * math.sin(heading_rad)
-        return sensor_x, sensor_y
+        heading = math.radians(robot.heading_deg)
+        x = robot.x + self.ahead * math.cos(heading) - self.side * math.sin(heading)
+        y = robot.y + self.ahead * math.sin(heading) + self.side * math.cos(heading)
+        return x, y
 
     def reads_line(self, robot, line):
         """Say if the sensor is over the line."""

@@ -21,3 +21,8 @@ print(sensor.position(Robot(1, 2, 90, 2)))
 print(sensor.reads_line(Robot(1, 0, 0, 2), line))
 print(sensor.reads_line(Robot(1, 0.5, 0, 2), line))
 print(sensor.reads_line(Robot(1, -0.3, 90, 2), line))
+
+left = Sensor(0.3, 0.15)
+right = Sensor(0.3, -0.15)
+print(left.position(Robot(1, 2, 0, 2)))
+print(left.position(Robot(1, 2, 90, 2)))
