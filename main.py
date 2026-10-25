@@ -3,7 +3,7 @@
 from line import Line
 from robot import Robot
 from sensor import Sensor
-from simulate import tick
+from simulate import run
 
 
 def main():
@@ -13,8 +13,11 @@ def main():
     right = Sensor(0.3, -0.15)
     robot = Robot(0, 0.2, 0, 2)
 
-    tick(robot, line, left, right, 0.1)
-    print(robot.heading_deg, robot.x, robot.y)
+    path = run(robot, line, left, right, 0.1, 100)
+    print(len(path))
+    print(path[-1])
+    for point in path[::10]:
+        print(point)
 
 
 if __name__ == "__main__":
