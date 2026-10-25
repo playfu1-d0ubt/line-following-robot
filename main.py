@@ -1,3 +1,4 @@
+from controller import choose_turn
 from line import Line
 from robot import Robot
 from sensor import Sensor
@@ -27,3 +28,8 @@ right = Sensor(0.3, -0.15)
 for y in (0, 0.1, -0.1):
     robot = Robot(1, y, 0, 2)
     print(y, left.reads_line(robot, line), right.reads_line(robot, line))
+
+print(choose_turn(False, False))
+print(choose_turn(True, False))
+print(choose_turn(False, True))
+print(choose_turn(True, True))
