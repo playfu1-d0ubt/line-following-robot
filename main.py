@@ -24,5 +24,6 @@ print(sensor.reads_line(Robot(1, -0.3, 90, 2), line))
 
 left = Sensor(0.3, 0.15)
 right = Sensor(0.3, -0.15)
-print(left.position(Robot(1, 2, 0, 2)))
-print(left.position(Robot(1, 2, 90, 2)))
+for y in (0, 0.1, -0.1):
+    robot = Robot(1, y, 0, 2)
+    print(y, left.reads_line(robot, line), right.reads_line(robot, line))
