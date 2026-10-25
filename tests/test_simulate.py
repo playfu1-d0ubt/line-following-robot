@@ -16,4 +16,4 @@ def test_robot_ends_on_the_line():
     path = run(robot, line, left, right, 0.1, 100)
 
     final_y = path[-1][1]
-    assert abs(final_y) <= 0.1
+    assert abs(final_y) <= line.width / 2
