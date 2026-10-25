@@ -15,6 +15,7 @@ class Sensor:
         self.side = side
 
     def position(self, robot):
+        """Return the (x, y) spot of the sensor."""
         heading = math.radians(robot.heading_deg)
         x = robot.x + self.ahead * math.cos(heading) - self.side * math.sin(heading)
         y = robot.y + self.ahead * math.sin(heading) + self.side * math.cos(heading)
